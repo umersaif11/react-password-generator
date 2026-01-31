@@ -1,16 +1,48 @@
-# React + Vite
+# React Password Generator 🔐
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A highly optimized password generator application built with React and Tailwind CSS. This project focuses on handling complex state, optimizing performance with hooks, and interacting directly with the DOM.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Customizable Security:** Adjust password length (6-100 characters).
+- **Character Options:** Toggles for including Numbers and Special Characters.
+- **Instant Feedback:** Password regenerates automatically as you change settings.
+- **Clipboard Integration:** One-click "Copy" button with visual selection feedback.
+- **Optimized Performance:** Uses memoization to prevent unnecessary re-renders.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Library:** React JS
+- **Styling:** Tailwind CSS
+- **Build Tool:** Vite
 
-## Expanding the ESLint configuration
+## 🧠 Concepts & Hooks Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project was built to master React Hooks. Here is how each one is used:
+
+- **`useState`**: Managing the state of variables like `length`, `numberAllowed`, `charAllowed`, and the generated `password`.
+- **`useCallback`**: Used to **memoize** the `passwordGenerator` function. This ensures the function is cached and only recreated when dependencies (length/settings) change, optimizing performance.
+- **`useEffect`**: Triggers the password generation logic automatically whenever the page loads or the user updates the dependencies (length, numbers, etc.).
+- **`useRef`**: Used to create a reference to the input field. This allows us to programmatically **select/highlight** the text inside the input box when the user clicks "Copy", providing better visual feedback.
+
+## 🖥️ Screenshots
+
+**Password Generator**
+![Desktop view](./screenshots/pg.png)
+
+
+## 💻 How to Run Locally
+
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/yourusername/react-password-generator.git](https://github.com/yourusername/react-password-generator.git)
+
+2. Navigate to the project directory
+```bash
+   cd react-password-generator
+```    
+3. Start the development server
+```bash
+   npm run dev
+```  
+   
