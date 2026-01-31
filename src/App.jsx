@@ -24,6 +24,7 @@ function App() {
   }, [
     length, numAllowed, charAllowed, setPassword
   ])
+  passwordGenerator()
   return (
     <>
       <div className="w-full max-w-full mx-auto 
