@@ -8,6 +8,10 @@ function App() {
   const [charAllowed, setcharAllowed] = useState(false)
   const [password, setPassword] = useState("")
   const passwordRef = useRef(null)
+  const copyPasswordToClipboard = useCallback(() => {
+    passwordRef.current?.select()
+    window.navigator.clipboard.writeText(password)
+  }, [password])
   const passwordGenerator = useCallback(() => {
     let pass = ""
     let string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
@@ -25,9 +29,6 @@ function App() {
   }, [
     length, numAllowed, charAllowed, setPassword
   ])
-  const copyPasswordToClipboard = useCallback(() => {
-    window.navigator.clipboard.writeText(password)
-  }, [password])
   useEffect(() => {
     passwordGenerator()
   }, [length, charAllowed, numAllowed, passwordGenerator])
