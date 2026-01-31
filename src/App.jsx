@@ -1,6 +1,5 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useCallback } from 'react'
+
 import './App.css'
 
 function App() {
@@ -8,7 +7,9 @@ function App() {
   const [numAllowed, setNumAllowed] = useState(false)
   const [charAllowed, setcharAllowed] = useState(false)
   const [password, setPassword] = useState("")
-
+  const passwordGenerator = useCallback(fn, [
+    length, numAllowed, charAllowed, setPassword
+  ])
   return (
     <>
       <h1 className='text-4xl text-center'>
