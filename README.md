@@ -4,7 +4,7 @@ A highly optimized password generator application built with React and Tailwind 
 
 ## 🚀 Features
 
-- **Customizable Security:** Adjust password length (6-100 characters).
+- **Customizable Security:** Adjust password length (6-50 characters).
 - **Character Options:** Toggles for including Numbers and Special Characters.
 - **Instant Feedback:** Password regenerates automatically as you change settings.
 - **Clipboard Integration:** One-click "Copy" button with visual selection feedback.
