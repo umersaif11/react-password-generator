@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 
 import './App.css'
 
@@ -15,7 +15,7 @@ function App() {
 
     for(let i = 0; i <= length; i++) {
       let char = Math.floor(
-        Math.random(string.length) + 1
+        Math.random() * string.length + 1
       )
       pass += string.charAt(char)
     }
@@ -24,7 +24,9 @@ function App() {
   }, [
     length, numAllowed, charAllowed, setPassword
   ])
-  passwordGenerator()
+  useEffect(() => {
+    passwordGenerator()
+  }, [length, charAllowed, numAllowed, passwordGenerator])
   return (
     <>
       <div className="w-full max-w-full mx-auto 
@@ -52,7 +54,7 @@ function App() {
             <input 
             type="range"
             min={6}
-            max={100}
+            max={40}
             value={length}
             className="cursor-pointer accent-blue-700"
             onChange={(e) => {setLength(e.target.value)}}
