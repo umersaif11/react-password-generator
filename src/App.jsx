@@ -10,6 +10,7 @@ function App() {
   const passwordRef = useRef(null)
   const copyPasswordToClipboard = useCallback(() => {
     passwordRef.current?.select()
+    passwordRef.current?.setSelectionRange(0, 20)
     window.navigator.clipboard.writeText(password)
   }, [password])
   const passwordGenerator = useCallback(() => {
